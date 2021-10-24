@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/*font weight 
+    regular 400
+    regular 400 italic
+    bold 700
+    bold 700 italic
+*/
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+/*font-family: 'Cedarville Cursive', cursive;*/
+
+:root {
+    --bg-color: hsl(49 37% 94%);
+    --typewriterSpeed: 6s;
+    --typewriterCharacters: 11;
+    --color: #000000;
+  }
+html{
+  scroll-behavior: smooth;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Anonymous Pro', monospace;
+    display: grid;
+    place-content: center;
+    text-align: left;
+    background: var(--bg--color);
+    cursor: none;
+}
+#invertedcursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  top: var(--y, 0);
+  left: var(--x, 0);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  mix-blend-mode: difference;
+  transition: transform .2s;
+}
+main{
+    width: 100%;
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+section{
+    display: grid;
+    place-content: center;
+    text-align: left;
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+section:nth-of-type(1){
+  
+    color: #000;
+    background-color: #fff;
+}
+section:nth-of-type(2){
+  
+    color: #fff;
+    background-color: #000;
+    padding: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    h2{
+    
+        color:white;
+    }
+    .elements-parent{
+      overflow: hidden;
+
+      .elements-container{
+        overflow-x: scroll;
+        overflow-y: hidden;
+        display: flex;
+        width: 90vw;
+        position: relative;
+        white-space: nowrap;
+        transition: all 0.2s;
+        transform: scale(0.98);
+        will-change: transform;
+        user-select: none;
+        cursor: pointer;
+
+        .element{
+          margin: 5em 5em 5em 0;
+          display: inline-block;
+          background-color: #fff;
+          padding: 5em;
+          color: black;
+          font-size: 1.5em;
+          text-align: center;
+          width: 10vw;
+          height: 10vw;
+
+          img{
+            width: 5em;
+          }
+        }
+        .top{
+          margin-top: 5vh;
+          &:nth-of-type(1){
+            margin-left:25vw;
+          }
+        }
+        .bottom{
+          margin-bottom: 5vh;
+        }
+      }
+      .elements:-webkit-scrollbar {
+        display: none;
+      }        
+      .elements-container.active {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+      }
+    }
+
+}
+section:nth-of-type(3){
+    color: #000;
+    background-color: #fff;
+
+    .deck{
+      display: flex;
+      .card{
+        padding: 2em;
+        width: 20vw;
+        height: 25vh;
+        background-color: #ffffff;
+        border-radius: 2px;
+        box-shadow: -1rem 0 3rem rgba(0, 0, 0, 0.26);
+        transition: 0.4s ease-out;
+        position: relative;
+        left: 0px;
+      }
+      .card:not(:first-child) {
+        margin-left: -50px;
+    }
+    
+    .card:hover {
+      transform: translateY(-20px);
+      transition: 0.4s ease-out;
+    }
+    
+    .card:hover ~ .card {
+      position: relative;
+      left: 50px;
+      transition: 0.4s ease-out;
+    }
+  }
+}
+section:nth-of-type(4){
+  background-color: black;
+
+  .photobook{
+    display: flex;
+    img{
+      width: 500px;
+    }
+    .polaroid{
+      margin:15px;
+    }
+  }
+}
+
+:root {
+  --bg-color: hsl(0, 0%, 100%);
+  --typewriterSpeed: 3s;
+  --typewriterCharacters: 11;
+}
+
+h1 {
+  font-size: 10em;
+  position: relative;
+  font-family: "Source Code Pro", monospace;
+  position: relative;
+  width: max-content;
+  margin: 0;
+}
+
+.typed::before,
+.typed::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.typed::before {
+  background: var(--bg-color);
+  height: 1.5em;
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+.typed::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+h2 {
+--color: black;
+  font-size: 2rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  background: black;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white; 
+  border-radius:10px;
+  border: 1px black solid;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #eee; 
+}
+.scroll {
+	
+	//////////////////////////////////
+	/// JUST FOR DEMO
+	///
+	margin-top: 5rem;
+	margin-bottom: 2rem;
+	///
+	//////////////////////////////////
+	
+	
+  height: 25vmin;
+  width: 25vmin * .6;
+  border-radius: 25vmin;
+  border: 25vmin/22 solid --color;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: calc(50% - #{25vmin} / 20);
+    top: 25vmin/5;
+    height: 25vmin/10;
+    width: 25vmin/10;
+    background: --color;
+    border-radius: 50%;
+    animation: scroll 4s infinite;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(25vmin/4);
+  }
+}
